@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angolanos verificação</title>
+</head>
+<body>
+    <h1>Verificação de Angolanos</h1>
+    <label for="txtpais">Qual é o seu país?</label>
+    <input type="text" name="txtpais" id="txtpais" placeholder="País">
+    <input type="button" value="Verificar" id="verificar">
+    <div id="res"></div>
+    <script>
+        var btn = window.document.querySelector('#verificar')
+        btn.addEventListener('click', verificar)
+
+        function verificar(){
+            var txtpais = window.document.querySelector('#txtpais')
+            var pais = String(txtpais.value).toLowerCase()
+            var res = window.document.querySelector('div#res')
+
+            res.innerHTML = `<p> Boa tarde sr(a) é natural de <strong>${pais}</strong><p>`
+            if(pais == 'angola'){
+                res.innerHTML += `<p>O sr(a) é Mangolê!!!<p>`
+            }else{
+                res.innerHTML += `<p>Obrigado pela contribuição<p>`
+            }
+
+        }
+    </script>
+</body>
+</html>
